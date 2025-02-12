@@ -116,11 +116,11 @@ header {
   align-items: center;
 }
 form > p > input {
-  padding: 10px;
+  padding: 10px 0;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 90%;
+  width: 100%;
 }
 .top {
   background: seagreen;
