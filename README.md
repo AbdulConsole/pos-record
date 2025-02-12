@@ -1,6 +1,6 @@
 # pos-record
 
-## A simple pos machine transactions recorder. 
+## A simple pos machine transaction recorder. 
 
-![](pos.png)
+![](assets/pos.png)
 
