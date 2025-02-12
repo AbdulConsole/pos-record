@@ -57,7 +57,7 @@ header {
   border-radius: 4px;
 }
 
-.transaction-form button {
+.transaction-form button, button {
   margin-top: 20px;
   padding: 10px;
   background: #2196F3;

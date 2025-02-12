@@ -1,2 +1,6 @@
 # pos-record
-A simple pos transaction tracker. 
+
+## A simple pos machine transactions recorder. 
+
+![](pos.png)
+
