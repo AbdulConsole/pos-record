@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Point of Sale Dashboard</h1>
+    </header>
+    <main>
+      <section class="balance-section">
+        <div class="balance-card">
+          <h2>Terminal Balance</h2>
+          <p id="terminalBalance">₦0.00</p>
+        </div>
+        <div class="balance-card">
+          <h2>Cash at Hand</h2>
+          <p id="cashAtHand">₦0.00</p>
+        </div>
+      </section>
+
+      <section class="transaction-form">
+        <h2>New Transaction</h2>
+        <form id="transactionForm">
+          <label for="transactionType">Transaction Type</label>
+          <select id="transactionType" required>
+            <option value="deposit-in-cash">Deposit In Cash</option>
+            <option value="deposit">Deposit</option>
+            <option value="withdrawal">Withdrawal</option>
+            <option value="transfer">Transfer</option>
+            <option value="savings">Savings</option>
+            <option value="loan">Loan</option>
+          </select>
+
+          <label for="amount">Amount (₦)</label>
+          <input type="number" id="amount" min="1" required>
+
+          <label for="narration">Narration</label>
+          <input type="text" id="narration" placeholder="Enter a short description" required>
+
+          <button type="submit">Record Transaction</button>
+        </form>
+      </section>
+
+      <section class="transaction-history">
+        <h2>Transaction History</h2>
+        <table id="transactionTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Amount (₦)</th>
+              <th>Terminal Balance</th>
+              <th>Cash at hand</th>
+              <th>Narration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="6">No transactions yet.</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
