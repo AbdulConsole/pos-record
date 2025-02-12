@@ -91,12 +91,17 @@ header {
 }
 
 /* Login */
+.error-message {
+  color: #ee5454;
+  font-size: 20px;
+}
 .ile {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 150px;
+  font-size: 21px;
 }
 .login-container {
   border: 1px solid white;

@@ -3,15 +3,22 @@ document.getElementById('loginForm').addEventListener('submit', async function (
   
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-
-  // Fetch credentials from auth.json
-  const response = await fetch('auth.json');
-  const credentials = await response.json();
-
-  if (email === credentials.email && password === credentials.password) {
-    localStorage.setItem('authenticated', true);
-    window.location.href = 'index.html';  // Redirect to the main app
-  } else {
-    document.getElementById('loginError').textContent = 'Invalid email or password.';
+  
+  try {
+    const response = await fetch('auth.json');
+    const data = await response.json();
+    
+    // Check if the email and password match any user in the JSON file
+    const user = data.users.find(u => u.email === email && u.password === password);
+    
+    if (user) {
+      localStorage.setItem('authenticated', 'true');
+      localStorage.setItem('currentUser', JSON.stringify(user));  // Store user info if needed
+      window.location.href = 'index.html';
+    } else {
+      document.getElementById('errorMsg').style.display = 'block';
+    }
+  } catch (error) {
+    document.getElementById('loginError').textContent = 'Invalid email 📨 or password 🔑', error;
   }
 });
